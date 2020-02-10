@@ -1,0 +1,17 @@
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/category/DeleteCategoryServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/category/AddCategoryServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/model/Task.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/dao/GenericDao.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/task/SearchTaskServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/model/Category.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/listener/SessionListener.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/dao/TaskDao.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/filter/TextFilter.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/AssistantMethods.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/task/TasksServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/HomeServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/task/DeleteTaskServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/model/Status.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/dao/CategoryDao.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/task/ChangeStatusServlet.java
+/home/valeria/Desktop/Todo list/src/main/java/org/lebedeva/servlet/task/AddTaskServlet.java
