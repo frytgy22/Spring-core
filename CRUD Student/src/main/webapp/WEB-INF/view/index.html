@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="templates/header.html"></head>
+
+<div class="mui--text-center content-wrapper">
+    <div class="mui--appbar-height"></div>
+    <br>
+    <br>
+    <div class="mui--text-display3 row wow zoomInDown">University</div>
+    <br>
+    <br>
+    <i class="fa fa-graduation-cap fa-5x  mui--text-display3 row wow zoomIn" aria-hidden="true"></i>
+    <br>
+    <br>
+    <a th:href="@{/students}" class="mui-btn mui-btn--raised">Students</a>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<footer th:insert="templates/footer.html"></footer>
