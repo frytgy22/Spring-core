@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="templates/header.html"></head>
+
+<div class="content-wrapper">
+    <a class="mui-btn mui-btn--primary mui--pull-right" th:href="@{/groups}">Go to groups list</a>
+
+    <div>
+        <h1 class="mui--text-center">Group info</h1>
+        <div class="error padding-left" th:text="${message}"></div>
+    </div>
+
+    <div th:if="${group !=null}">
+        <table class="mui-table mui-table--bordered padding  table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="${group.id}"></td>
+                <td th:text="${group.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<footer th:insert="templates/footer.html"></footer>

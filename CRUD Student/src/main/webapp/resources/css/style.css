@@ -76,3 +76,15 @@ form, .table, h1, h2 {
 .error {
     color: #d80000;
 }
+
+.padding-left {
+    padding-left: 100px;
+}
+
+.index {
+    width: 200px;
+}
+
+.index:hover {
+    background: #eee;
+}

@@ -7,10 +7,13 @@
 
     <div th:if="${students == null or students.size() < 1}">
         <h1 class="mui--text-center">Students not found</h1>
+        <div class="error padding-left" th:text="${message}"></div>
     </div>
 
     <div th:if="${students != null and students.size() > 0}">
         <h1 class="mui--text-center">Students</h1>
+        <div class="error padding-left" th:text="${message}"></div>
+
         <table class="mui-table mui-table--bordered padding  table">
             <thead>
             <tr>

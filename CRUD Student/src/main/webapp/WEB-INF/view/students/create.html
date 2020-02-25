@@ -5,37 +5,46 @@
 <div class="content-wrapper">
     <a class="mui-btn mui-btn--primary mui--pull-right" th:href="@{/students}">Go to students list</a>
 
-    <form class="mui-form padding " method="post" th:object="${student}">
-        <legend class="mui--text-center">New student</legend>
+    <div class="table" th:if="${groups == null or groups.size() < 1}">
+        <span class="error padding-left">Error. The list of groups is empty.
+            Add a group before creating a new student.</span>
+        <a class="mui-btn mui-btn--primary mui--pull-right" th:href="@{/groups/new}">Create group</a>
+    </div>
 
-        <div class="mui-textfield mui-textfield--float-label">
-            <input type="text" name="firstName" th:field="*{firstName}" autofocus maxlength="20" id="first">
-            <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
-            <label for="first">First name</label>
-        </div>
+    <div th:if="${groups != null and groups.size() > 0}">
+        <form class="mui-form padding " method="post" th:object="${student}">
+            <legend class="mui--text-center">New student</legend>
 
-        <div class="mui-textfield mui-textfield--float-label">
-            <input type="text" name="lastName" th:field="*{lastName}" maxlength="20" id="last">
-            <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
-            <label for="last">Last name</label>
-        </div>
+            <div class="mui-textfield mui-textfield--float-label">
+                <input type="text" name="firstName" th:field="*{firstName}" autofocus maxlength="50" id="first">
+                <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                <label for="first">First name</label>
+            </div>
 
-        <div class="mui-textfield mui-textfield--float-label">
-            <input type="number" required name="age" th:field="*{age}" id="age" th:value="*{age+1}">
-            <span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
-            <label for="age">Age</label>
-        </div>
+            <div class="mui-textfield mui-textfield--float-label">
+                <input type="text" name="lastName" th:field="*{lastName}" maxlength="50" id="last">
+                <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                <label for="last">Last name</label>
+            </div>
 
-        <div class="mui-textfield mui-textfield--float-label">
-            <input type="text" name="name" th:field="*{group.name}" maxlength="20" id="group">
-            <span class="error" th:if="${#fields.hasErrors('group.name')}" th:errors="*{group.name}"></span>
-            <label for="group">Group</label>
-        </div>
+            <div class="mui-textfield mui-textfield--float-label">
+                <input type="number" required name="age" th:field="*{age}" id="age" th:value="*{age+1}">
+                <span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+                <label for="age">Age</label>
+            </div>
 
-        <div class="mui--text-center">
-            <button type="submit" class="mui-btn mui-btn--raised ">Submit</button>
-        </div>
-    </form>
+            <div class="mui-select">
+                <select name="name" th:field="*{group.id}" id="group">
+                    <option th:each="group : ${groups}" th:value="${group.id}" th:text="${group.name}"></option>
+                </select>
+                <span class="error" th:if="${#fields.hasErrors('group.id')}" th:errors="*{group.id}"></span>
+                <label for="group">Group</label>
+            </div>
 
+            <div class="mui--text-center">
+                <button type="submit" class="mui-btn mui-btn--raised ">Submit</button>
+            </div>
+        </form>
+    </div>
 </div>
 <footer th:insert="templates/footer.html"></footer>

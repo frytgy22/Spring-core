@@ -17,12 +17,12 @@ public class StudentValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        ValidationUtils.rejectIfEmpty(errors, "firstName", "firstName.empty");
-        ValidationUtils.rejectIfEmpty(errors, "lastName", "lastName.empty");
-        ValidationUtils.rejectIfEmpty(errors, "age", "age.empty");
-        ValidationUtils.rejectIfEmpty(errors, "group.name", "group.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "firstName.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "lastName.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "age", "age.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "group.id", "group.empty");
 
-        Pattern pattern = Pattern.compile("[1-9]{1}[0-9]?", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("[1-9][0-9]?", Pattern.CASE_INSENSITIVE);
 
         Student student = (Student) o;
         String age = String.valueOf(student.getAge());

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="templates/header.html"></head>
+
+<div class="content-wrapper">
+    <a class="mui-btn mui-btn--primary mui--pull-right" th:href="@{/groups}">Go to groups list</a>
+
+    <div th:switch="${group}">
+        <h2 class="mui--text-center" th:case="null">Group not found!</h2>
+
+        <div th:case="*">
+
+            <form class="mui-form padding" method="post" th:object="${group}" action="#" th:action="@{/groups/edit}">
+
+                <legend class="mui--text-center">Edit group:
+                    <span th:text="*{name} "></span>
+                </legend>
+
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="hidden" name="id" th:field="*{id}" th:value="*{id}">
+                    <input type="text" name="name" th:field="*{name}" autofocus maxlength="50"
+                           id="first" th:value="*{name}">
+                    <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    <label for="first">Group name</label>
+                </div>
+
+                <div class="mui--text-center">
+                    <button type="submit" class="mui-btn mui-btn--raised ">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="templates/footer.html"></footer>

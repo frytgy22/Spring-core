@@ -10,12 +10,42 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - java2019@db4free.net" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - java2019@db4free.net" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - java2019@db4free.net" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="java2019: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
@@ -37,10 +67,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/groups" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,6 +80,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="spring" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/groups" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,6 +110,16 @@
       <workItem from="1581802155418" duration="4651000" />
       <workItem from="1581854288244" duration="5868000" />
       <workItem from="1581864358729" duration="520000" />
+      <workItem from="1582356393900" duration="27986000" />
+      <workItem from="1582398583957" duration="11890000" />
+      <workItem from="1582456965012" duration="20624000" />
+      <workItem from="1582482845112" duration="9254000" />
+      <workItem from="1582495468056" duration="4311000" />
+      <workItem from="1582529188226" duration="1817000" />
+      <workItem from="1582532232477" duration="3125000" />
+      <workItem from="1582540523206" duration="858000" />
+      <workItem from="1582576374573" duration="5292000" />
+      <workItem from="1582613122081" duration="1379000" />
     </task>
     <servers />
   </component>
@@ -80,30 +127,54 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1344" y="246" width="374" height="583" key="#com.intellij.ide.util.MemberChooser" timestamp="1581796019097">
+    <state x="1077" y="181" width="800" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582401566701">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="1344" y="246" width="374" height="583" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1581796019097" />
+    <state x="1077" y="181" width="800" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582401566701" />
+    <state x="1344" y="246" width="374" height="583" key="#com.intellij.ide.util.MemberChooser" timestamp="1582485433765">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="1344" y="246" width="374" height="583" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1582485433765" />
+    <state x="643" y="285" width="624" height="550" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582402466574">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="643" y="285" width="624" height="550" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582402466574" />
+    <state x="567" y="34" width="776" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582458109692">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="567" y="34" width="776" height="1046" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582458109692" />
+    <state x="1008" y="250" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582489706636">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="1008" y="250" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582489706636" />
+    <state x="992" y="263" width="524" height="508" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1582380479875">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="992" y="263" width="524" height="508" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.34.1920.1046@0.34.1920.1046" timestamp="1582380479875" />
     <state x="965" y="343" width="424" height="490" key="FileChooserDialogImpl" timestamp="1581544674321">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="965" y="343" width="424" height="490" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1581544674321" />
-    <state width="1227" height="181" key="GridCell.Tab.0.bottom" timestamp="1581864895184">
+    <state width="1336" height="194" key="GridCell.Tab.0.bottom" timestamp="1582614602606">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1227" height="181" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1581864895184" />
-    <state width="1227" height="181" key="GridCell.Tab.0.center" timestamp="1581864895183">
+    <state width="1336" height="194" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1582614602606" />
+    <state width="1336" height="194" key="GridCell.Tab.0.center" timestamp="1582614602605">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1227" height="181" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1581864895183" />
-    <state width="1227" height="181" key="GridCell.Tab.0.left" timestamp="1581864895183">
+    <state width="1336" height="194" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1582614602605" />
+    <state width="1336" height="194" key="GridCell.Tab.0.left" timestamp="1582614602605">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1227" height="181" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1581864895183" />
-    <state width="1227" height="181" key="GridCell.Tab.0.right" timestamp="1581864895184">
+    <state width="1336" height="194" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1582614602605" />
+    <state width="1336" height="194" key="GridCell.Tab.0.right" timestamp="1582614602605">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1227" height="181" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1581864895184" />
+    <state width="1336" height="194" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1582614602605" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1582389053528">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/0.34.1920.1046@0.34.1920.1046" timestamp="1582389053528" />
     <state x="735" y="187" width="924" height="690" key="Maven.ArtifactSearchDialog" timestamp="1581765065379">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
