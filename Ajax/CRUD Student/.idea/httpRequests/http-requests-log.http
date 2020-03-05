@@ -1,0 +1,395 @@
+DELETE http://localhost:8080/api/groups/5
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/groups/55
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+<> 2020-02-25T064026.200.json
+
+###
+
+DELETE http://localhost:8080/api/groups/5
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+<> 2020-02-25T064018.200.json
+
+###
+
+PUT http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "JS + CSS"
+}
+
+<> 2020-02-25T064006.200.json
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "JS"
+}
+
+###
+
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+<> 2020-02-25T063942.200.json
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "JS"
+}
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "JS"
+}
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+<> 2020-02-25T063912.400.html
+
+###
+
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+<> 2020-02-25T063856.200.json
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "JS"
+}
+
+<> 2020-02-25T063851.201.json
+
+###
+
+GET http://localhost:8080/api/groups/
+Accept: application/json
+
+<> 2020-02-25T063838.200.json
+
+###
+
+GET http://localhost:8080/api/groups/
+Accept: application/json
+
+<> 2020-02-25T063831.200.json
+
+###
+
+GET http://localhost:8080/api/groups/99
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/groups/3
+Accept: application/json
+
+<> 2020-02-25T063820.200.json
+
+###
+
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+<> 2020-02-25T063810.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T033634.200.json
+
+###
+
+DELETE http://localhost:8080/api/students/2
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/api/students
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T033550.200.json
+
+###
+
+PUT http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Masha",
+  "lastName": "Romanova",
+  "age": 21,
+  "group": {
+    "id": 2,
+    "name": "C++"
+  }
+}
+
+<> 2020-02-25T033542.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T033523.200.json
+
+###
+
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Abram",
+  "lastName": "Simonov",
+  "age": 55,
+  "group": {
+    "id": 4
+  }
+}
+
+<> 2020-02-25T033450.201.json
+
+###
+
+GET http://localhost:8080/api/students/5
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students/1
+Accept: application/json
+
+<> 2020-02-25T033415.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T033401.200.json
+
+###
+
+DELETE http://localhost:8080/api/students/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Masha",
+  "lastName": "Romanova",
+  "age": 21,
+  "group": {
+    "id": 2,
+    "name": "C++"
+  }
+}
+
+<> 2020-02-25T024856.200.json
+
+###
+
+DELETE http://localhost:8080/api/students/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/students/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T024827.200.json
+
+###
+
+DELETE http://localhost:8080/api/students/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students/1
+Accept: application/json
+
+<> 2020-02-25T024715.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T024705.200.json
+
+###
+
+PUT http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Masha",
+  "lastName": "Romanova",
+  "age": 21,
+  "group": {
+    "id": 2,
+    "name": "C++"
+  }
+}
+
+<> 2020-02-25T024652.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T024645.200.json
+
+###
+
+GET http://localhost:8080/api/students/1
+Accept: application/json
+
+<> 2020-02-25T024531.200.json
+
+###
+
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+<> 2020-02-25T012936.400.html
+
+###
+
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Abram",
+  "lastName": "Simonov",
+  "age": 55,
+  "group": {
+    "id": 4
+  }
+}
+
+<> 2020-02-25T012844.201.json
+
+###
+
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Abram",
+  "lastName": "Simonov",
+  "age": 55,
+  "group": {
+    "id": 4
+  }
+}
+
+<> 2020-02-25T012651.201.json
+
+###
+
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+<> 2020-02-25T012621.400.html
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T011137.200.json
+
+###
+
+GET http://localhost:8080/api/students
+Accept: application/json
+
+<> 2020-02-25T011117.200.json
+
+###
+
+GET http://localhost:8080/api/students/1
+Accept: application/json
+
+<> 2020-02-25T125618.200.json
+
+###
+
+GET http://localhost:8080/api/students/0
+Accept: application/json
+
+###
+

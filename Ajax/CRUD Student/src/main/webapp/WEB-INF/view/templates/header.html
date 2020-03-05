@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>University</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.muicss.com/mui-latest/extra/mui-colors.min.css">
+    <link rel="stylesheet" th:href="@{/static/css/style.css}">
+    <script src="//cdn.muicss.com/mui-latest/extra/mui-combined.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+</head>
+<body>
+<header class="mui-appbar mui--z1">
+    <div class="mui-container">
+        <table>
+            <tr class="mui--appbar-height">
+                <td class="mui--text-title">University.io</td>
+                <td class="mui--text-right">
+                    <ul class="mui-list--inline mui--text-body2">
+                        <li><a th:href="@{/}"><i class="fa fa-home" aria-hidden="true"></i> Home page</a></li>
+                        <li><a th:href="@{/h2console}"><i class="fa fa-database" aria-hidden="true"></i> H2 Console</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>

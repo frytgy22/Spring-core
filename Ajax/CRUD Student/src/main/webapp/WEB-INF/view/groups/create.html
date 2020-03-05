@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="templates/header.html"></head>
+
+<div class="content-wrapper">
+    <a class="mui-btn mui-btn--primary mui--pull-right" th:href="@{/groups}">Go to groups list</a>
+
+    <form class="mui-form padding " method="post" th:object="${group}">
+        <legend class="mui--text-center">New group</legend>
+
+        <div class="mui-textfield mui-textfield--float-label">
+            <input type="text" name="name" th:field="*{name}" autofocus maxlength="50" id="first">
+            <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            <label for="first">Group name</label>
+        </div>
+
+        <div class="mui--text-center">
+            <button type="submit" class="mui-btn mui-btn--raised ">Submit</button>
+        </div>
+    </form>
+
+</div>
+<footer th:insert="templates/footer.html"></footer>

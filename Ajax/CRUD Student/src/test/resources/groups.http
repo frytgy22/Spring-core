@@ -1,0 +1,33 @@
+GET http://localhost:8080/api/groups
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/groups/3
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "name": "JS"
+}
+
+###
+
+PUT http://localhost:8080/api/groups
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "JS + CSS"
+}
+
+###
+
+DELETE http://localhost:8080/api/groups/5
+Accept: application/json
+
+###

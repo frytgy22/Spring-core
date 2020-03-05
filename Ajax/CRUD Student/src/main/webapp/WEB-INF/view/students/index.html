@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="templates/header.html"></head>
+
+<div class="content-wrapper">
+    <a id="create" class="mui-btn mui-btn--primary mui--pull-right">Create student</a>
+
+    <div id="add" class="mui-form padding">
+        <h2 id="title" class="mui--text-center"></h2>
+
+        <div class="mui-textfield mui-textfield">
+            <input type="hidden" name="student.id" id="id">
+            <input type="text" name="firstName" autofocus maxlength="50" id="first">
+            <label for="first">First name</label>
+        </div>
+
+        <div class="mui-textfield mui-textfield">
+            <input type="text" name="lastName" maxlength="50" id="last">
+            <label for="last">Last name</label>
+        </div>
+
+        <div class="mui-textfield mui-textfield">
+            <input type="number" required name="age" id="age">
+            <label for="age">Age</label>
+        </div>
+
+        <div class="mui-select">
+            <select name="group.id" id="group"></select>
+            <label for="group">Group</label>
+        </div>
+
+        <div class="mui--text-center">
+            <button id="sub" class="mui-btn mui-btn--raised ">Add</button>
+        </div>
+        <div class="mui--text-center">
+            <button id="upd" class="mui-btn mui-btn--raised ">Update</button>
+        </div>
+    </div>
+
+    <div id="table">
+        <h2 class="mui--text-center">Students</h2>
+        <table class="mui-table mui-table--bordered padding">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Group</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script th:inline="javascript">
+        "use strict";
+        /*<![CDATA[*/
+        var url = /*[[@{/api/students/}]]*/'';
+        var tbody = document.getElementById("tbody");
+
+        loadDataGroups();
+        loadData();
+        create();
+        update();
+
+        function loadData() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let students = JSON.parse(xhr.responseText);
+                    students.forEach((s) => {
+                        addStudentInTable(s);
+                    });
+                }
+            };
+            xhr.send();
+        }
+
+        function loadDataGroups() {
+            let select = document.getElementById("group");
+            let url = /*[[@{/api/groups/}]]*/'';
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var groups = JSON.parse(xhr.responseText);
+                    groups.forEach((s) => {
+                        let option = document.createElement("option");
+                        option.value = s.id;
+                        let text = document.createTextNode(s.name);
+                        option.appendChild(text);
+                        select.appendChild(option);
+                    });
+                }
+            };
+            xhr.send();
+        }
+
+        function create() {
+            document.getElementById("sub").addEventListener("click", function () {
+                const params = {
+                    firstName: document.querySelector('#first').value,
+                    lastName: document.querySelector('#last').value,
+                    age: document.querySelector('#age').value,
+                    group: {
+                        id: document.querySelector('#group').value
+                    }
+                };
+
+                let http = new XMLHttpRequest();
+                http.open('POST', url, true);
+                http.setRequestHeader('Content-type', 'application/json');
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4 && http.status === 201) {
+                        let s = JSON.parse(http.responseText);
+                        addStudentInTable(s);
+                    }
+                };
+                http.send(JSON.stringify(params));
+                cleanForm();
+                document.getElementById("add").style.display = 'none';
+                document.getElementById("table").style.opacity = '1';
+                document.getElementById("sub").style.display = 'none';
+            });
+        }
+
+        function addDeleteHandler(btn) {
+            btn.addEventListener("click", function () {
+                let id = this.getAttribute('data-id');
+                let urlDel = url + id;
+                fetch(urlDel, {method: 'DELETE'})
+                    .then(resp => {
+                        let tr = btn.parentElement.parentElement;
+                        tbody.removeChild(tr);
+                    }).catch(error => {
+                    console.error("Error remove: " + error);
+                });
+            });
+        }
+
+        function getStudent(btn2) {
+            btn2.addEventListener("click", function () {
+                document.getElementById("upd").style.display = 'block';
+                let id = this.getAttribute('data-id');
+                let option = document.createElement("option");
+
+                let http = new XMLHttpRequest();
+                http.open('GET', url + id, true);
+                http.setRequestHeader('Content-type', 'application/json');
+
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4 && http.status === 200) {
+                        let data = JSON.parse(http.responseText);
+
+                        document.getElementById("title").textContent = '';
+                        let text = document.createTextNode("Update student");
+                        document.getElementById("title").appendChild(text);
+
+                        document.getElementById("table").style.opacity = '0';
+                        document.getElementById("add").style.display = 'block';
+
+                        document.querySelector('#id').value = data.id;
+                        document.querySelector('#first').value = data.firstName;
+                        document.querySelector('#last').value = data.lastName;
+                        document.querySelector('#age').value = data.age;
+
+                        option.value = data.group.id;
+                        option.selected = true;
+                        option.hidden = true;
+                        let nameGroup = document.createTextNode(data.group.name);
+                        option.appendChild(nameGroup);
+                        document.querySelector('#group').appendChild(option);
+                        let tr = btn2.parentElement.parentElement;
+                        tbody.removeChild(tr);
+                    }
+                };
+                http.send();
+            });
+        }
+
+        function update() {
+            document.getElementById("upd").addEventListener("click", function () {
+                const params = {
+                    id: document.querySelector('#id').value,
+                    firstName: document.querySelector('#first').value,
+                    lastName: document.querySelector('#last').value,
+                    age: document.querySelector('#age').value,
+                    group: {
+                        id: document.querySelector('#group').value,
+                        name: $("#group option:selected").text()
+                    }
+                };
+
+                let http = new XMLHttpRequest();
+                http.open('PUT', url, true);
+                http.setRequestHeader('Content-type', 'application/json');
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4 && http.status === 200) {
+                        let s = JSON.parse(http.responseText);
+                        addStudentInTable(s);
+                    }
+                };
+                http.send(JSON.stringify(params));
+                cleanForm();
+                document.getElementById("add").style.display = 'none';
+                document.getElementById("table").style.opacity = '1';
+                document.getElementById("upd").style.display = 'none';
+            });
+        }
+
+        function addStudentInTable(s) {
+            let tr = document.createElement("tr");
+            for (let val in s) {
+                let td = document.createElement("td");
+                if (val === 'group') {
+                    td.appendChild(document.createTextNode(s[val].name));
+                } else {
+                    td.appendChild(document.createTextNode(s[val]));
+                }
+                tr.appendChild(td);
+            }
+            let td = document.createElement("td");
+            let btn = document.createElement("button");
+            btn.setAttribute('data-id', s.id);
+            btn.classList.add('mui-btn', 'mui-btn--small', 'mui-btn--danger');
+            btn.appendChild(document.createTextNode('Delete'));
+
+            let btn2 = document.createElement("button");
+            btn2.setAttribute('data-id', s.id);
+            btn2.classList.add('mui-btn', 'mui-btn--small', 'mui-btn--primary');
+            btn2.appendChild(document.createTextNode('Update'));
+
+            addDeleteHandler(btn);
+            getStudent(btn2);
+
+            td.appendChild(btn);
+            td.appendChild(btn2);
+            tr.appendChild(td);
+            tbody.appendChild(tr);
+        }
+
+        function cleanForm() {
+            document.querySelector('#first').value = '';
+            document.querySelector('#last').value = '';
+            document.querySelector('#age').value = '';
+        }
+
+        document.getElementById("create").addEventListener('click', function () {
+            document.getElementById("sub").style.display = 'block';
+            document.getElementById("title").textContent = '';
+            let text = document.createTextNode("New student");
+            document.getElementById("title").appendChild(text);
+            document.getElementById("table").style.opacity = '0';
+            document.getElementById("add").style.display = 'block';
+        });
+
+        /*]]>*/
+    </script>
+</div>
+
+<footer th:insert="templates/footer.html"></footer>
